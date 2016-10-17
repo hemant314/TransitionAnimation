@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TransitionAnimation</string>
+    <string name="android">Large part of Android</string>
+    <string name="ios">The prorammimg language of ios</string>
+    <string name="xamarin">The prorammimg language of ios</string>
+    <string name="phonegap">The prorammimg language of ios</string>
+    <string name="transition">transit</string>
+</resources>

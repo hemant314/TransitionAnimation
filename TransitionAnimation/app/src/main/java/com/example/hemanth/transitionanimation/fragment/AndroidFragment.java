@@ -25,18 +25,18 @@ public class AndroidFragment extends Fragment {
     int position;
     public static  RelativeLayout androidLayout;
 
-    public AndroidFragment(String language, String typed, String detail) {
-        lang=language;
-        typeValue=typed;
-        det=detail;
 
-        Log.v("lang",lang);
-        Log.v("type",typeValue);
-        Log.v("detail",det);
+
+    public AndroidFragment() {
 
     }
 
-    public AndroidFragment() {
+    public AndroidFragment(String language, String typed, String detail, int posi) {
+        lang=language;
+        typeValue=typed;
+        det=detail;
+        position=posi;
+
 
     }
 
@@ -48,6 +48,18 @@ public class AndroidFragment extends Fragment {
         type= (TextView)view.findViewById(R.id.language);
         desc=(TextView)view.findViewById(R.id.desc);
         androidLayout = (RelativeLayout) view.findViewById(R.id.androidLayout);
+        if(position==0){
+            androidLayout.setBackgroundColor(getResources().getColor(R.color.md_light_green_900));
+        }
+        if(position==1){
+            androidLayout.setBackgroundColor(getResources().getColor(R.color.md_amber_A700));
+        }
+        if(position==2){
+            androidLayout.setBackgroundColor(getResources().getColor(R.color.md_pink_A700));
+        }
+        if(position==3){
+            androidLayout.setBackgroundColor(getResources().getColor(R.color.md_brown_800));
+        }
 
         textView.setText(lang);
         type.setText(typeValue);

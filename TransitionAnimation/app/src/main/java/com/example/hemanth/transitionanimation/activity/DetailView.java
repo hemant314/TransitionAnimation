@@ -99,7 +99,7 @@ public class DetailView extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             // Do first time initialization -- add initial fragment.
-            Fragment newFragment = new AndroidFragment(language,typed,detail);
+            Fragment newFragment = new AndroidFragment(language,typed,detail,posi);
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.add(R.id.simple_fragment, newFragment).commit();
         }
@@ -122,8 +122,8 @@ public class DetailView extends AppCompatActivity {
 
     private void addFragment() {
 
-        AndroidFragment.androidLayout.startAnimation(bottomIn);
-      //  AndroidFragment.androidLayout.startAnimation(topOut);
+       //AndroidFragment.androidLayout.startAnimation(bottomIn);
+        AndroidFragment.androidLayout.startAnimation(topOut);
         posi++;
 
         if(posi>3){
@@ -131,25 +131,24 @@ public class DetailView extends AppCompatActivity {
         }
 
         if(posi==0){
-            fragment = new AndroidFragment(language,typed,detail);
-            AndroidFragment.androidLayout.setBackgroundColor(getResources().getColor(R.color.md_light_green_900));
+            fragment = new AndroidFragment(language,typed,detail,posi);
+
 
         }else if(posi==1){
-            fragment = new AndroidFragment(lang1,type1,detail1);
+            fragment = new AndroidFragment(lang1,type1,detail1,posi);
             main.setText(lang2);
             sub.setText(type2);
-            AndroidFragment.androidLayout.setBackgroundColor(getResources().getColor(R.color.md_amber_A700));
+
 
         }else if(posi==2){
-            fragment = new AndroidFragment(lang2,type2,detail3);
+            fragment = new AndroidFragment(lang2,type2,detail3,posi);
             main.setText(lang3);
             sub.setText(type3);
-            AndroidFragment.androidLayout.setBackgroundColor(getResources().getColor(R.color.md_pink_A700));
+
 
         }else if(posi==3){
-            fragment = new AndroidFragment(lang3,type3,detail3);
+            fragment = new AndroidFragment(lang3,type3,detail3,posi);
             relativeLayout.setVisibility(View.GONE);
-            AndroidFragment.androidLayout.setBackgroundColor(getResources().getColor(R.color.md_brown_800));
 
         }
 
